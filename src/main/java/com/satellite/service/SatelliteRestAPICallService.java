@@ -73,10 +73,10 @@ public class SatelliteRestAPICallService {
 			String appointmentId;
 
 			for (JsonElement pa : jsonArray) {
-				JsonObject paymentObj = pa.getAsJsonObject();
-				String message = paymentObj.get(env.getProperty("message")).getAsString();
-				String jappointmentId = paymentObj.get(env.getProperty("appointmentId")).getAsString();
-				String centralStatus = paymentObj.get(env.getProperty("centralStatus")).getAsString();
+				JsonObject appointmentObj = pa.getAsJsonObject();
+				String message = appointmentObj.get(env.getProperty("message")).getAsString();
+				String jappointmentId = appointmentObj.get(env.getProperty("appointmentId")).getAsString();
+				String centralStatus = appointmentObj.get(env.getProperty("centralStatus")).getAsString();
 				for (int i = 1; i < allCSVData.size(); i++) {
 					appointmentId = allCSVData.get(i)[1];
 					if (appointmentId.equals(jappointmentId)) {
