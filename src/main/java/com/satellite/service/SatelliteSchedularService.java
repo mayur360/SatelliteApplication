@@ -27,7 +27,7 @@ public class SatelliteSchedularService {
 	@Autowired
 	private Job readCSVJob;
 	
-	@Scheduled(cron = "0 0/1 * 1/1 * ?")
+	@Scheduled(cron = "0/30 0/1 * 1/1 * ?")
 	public void getCSVJobSceduler() {
 		
 		Map<String, JobParameter> params = new HashMap<>();
